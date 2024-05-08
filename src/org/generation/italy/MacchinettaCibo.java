@@ -16,6 +16,7 @@ public class MacchinettaCibo {
 		String codiceInserito;
 		boolean indiceProd = false;
 		int i;
+		boolean loop=true; 
 		//inizio ciclo do while per ricomiciare sempre
 		do {
 			//stmpa array nomi
@@ -47,7 +48,8 @@ public class MacchinettaCibo {
 						//inizio ciclo do while per inserimento altre monete
 						do {
 							//aumento soldi inseriti
-							soldiUtente = soldiUtente + sc.nextDouble();							
+							soldiUtente = soldiUtente + sc.nextDouble();
+							sc.nextLine();
 							//verifica di impporto sufficente
 							if (soldiUtente >= prezziProd[i]) {
 								//riduzione quantità array
@@ -63,12 +65,12 @@ public class MacchinettaCibo {
 								//aumento bilancio e azzeramento variabili
 								bilancioMacchinetta = (bilancioMacchinetta + prezziProd[i]);
 								resto = 0;
-								soldiUtente = 0;
 							}else {
 								System.out.println("L'importo rimanente è "+(prezziProd[i]-soldiUtente)+" euro, inserire un'altra moneta:");
 							}
 							//fine ciclo do while inserimento monete
 						} while (soldiUtente < prezziProd[i]);
+						soldiUtente = 0;
 						//quantità prodotto non disponibile
 					} else {
 						System.out.println("Quantità non disponibile.");
@@ -81,10 +83,9 @@ public class MacchinettaCibo {
 			}
 			System.out.println("arrivederci");
 			//fine ciclo do while per richiedere nuovamente tutto
-		} while (!indiceProd);
+		} while (true);
 		
 		//*FINE LATO UTENTE*
-		
 		
 		
 		
