@@ -11,7 +11,6 @@ public class MacchinettaCibo {
 		int[] quantitaProd = { 3, 7, 10, 2, 5 };
 		String[] codiceProd = { "111", "222", "333", "444", "555" };
 		double[] prezziProd = { 2, 2.5, 1.50, 3.50, 1 };
-		int lunghezza = 5;
 		double resto = 0;
 		String codiceInserito;
 		boolean indiceProd = false;
@@ -79,6 +78,7 @@ public class MacchinettaCibo {
 		} while (true);
 		
 		//*FINE LATO UTENTE*
+		
 		
 		
 		
