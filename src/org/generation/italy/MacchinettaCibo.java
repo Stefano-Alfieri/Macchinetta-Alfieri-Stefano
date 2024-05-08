@@ -11,12 +11,16 @@ public class MacchinettaCibo {
 		int[] quantitaProd = { 3, 7, 10, 2, 5 };
 		String[] codiceProd = { "111", "222", "333", "444", "555" };
 		double[] prezziProd = { 2, 2.5, 1.50, 3.50, 1 };
+		String[] nomiProd= {"patatine","cocacola","caramelle","mars", "tarallini"};
 		double resto = 0;
 		String codiceInserito;
 		boolean indiceProd = false;
 		int i;
 		//inizio ciclo do while per ricomiciare sempre
 		do {
+			//stmpa array nomi
+			for (i = 0; i < codiceProd.length; i++) 
+			System.out.println("i prodotti nella macchientta sono: "+nomiProd[i]+" e il relativo codice è "+codiceProd[i]);
 			//richiesta codice
 			System.out.print("Selezionare codice prodotto (o C per uscire): ");
 			codiceInserito = sc.nextLine();
@@ -43,7 +47,7 @@ public class MacchinettaCibo {
 						//inizio ciclo do while per inserimento altre monete
 						do {
 							//aumento soldi inseriti
-							soldiUtente = soldiUtente + sc.nextDouble();
+							soldiUtente = soldiUtente + sc.nextDouble();							
 							//verifica di impporto sufficente
 							if (soldiUtente >= prezziProd[i]) {
 								//riduzione quantità array
@@ -60,6 +64,8 @@ public class MacchinettaCibo {
 								bilancioMacchinetta = (bilancioMacchinetta + prezziProd[i]);
 								resto = 0;
 								soldiUtente = 0;
+							}else {
+								System.out.println("L'importo rimanente è "+(prezziProd[i]-soldiUtente)+" euro, inserire un'altra moneta:");
 							}
 							//fine ciclo do while inserimento monete
 						} while (soldiUtente < prezziProd[i]);
@@ -75,7 +81,7 @@ public class MacchinettaCibo {
 			}
 			System.out.println("arrivederci");
 			//fine ciclo do while per richiedere nuovamente tutto
-		} while (true);
+		} while (!indiceProd);
 		
 		//*FINE LATO UTENTE*
 		
