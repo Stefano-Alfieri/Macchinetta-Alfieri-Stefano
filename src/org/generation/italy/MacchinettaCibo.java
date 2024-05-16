@@ -17,9 +17,9 @@ public class MacchinettaCibo {
 		String[] nomiAtt = { "Modifica Prezzo", "Stampa Bilancio", "Quantità Prodotti", "Eroga Prodotto",
 				"Aggiungi Prodotto", "Rimuovi Prodotto" };
 		double resto = 0;
-		String codiceInserito, codiceGestore = "12345", codiceAttIns, codiceModPrezz, codiceModQuant;
+		String codiceGestore = "12345", codiceAttIns, codiceModPrezz, codiceModQuant;
 		int i, prodRim, newQuant;
-		boolean indiceProd = false;
+
 		// inserimento prod default liste
 		quantitaProd.add(3);
 		quantitaProd.add(7);
@@ -39,7 +39,8 @@ public class MacchinettaCibo {
 		nomiProd.add("Mars");
 		// inizio ciclo do while per loop
 		do {
-
+			String codiceInserito;
+			boolean indiceProd = false;
 			// stmpa array nomi
 			for (i = 0; i < codiceProd.size(); i++)
 				System.out.println("i prodotti nella macchientta sono: " + nomiProd.get(i) + " e il relativo codice è "
